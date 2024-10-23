@@ -1,12 +1,7 @@
-body {
-  margin: 0;
-  font-family: monospace;
-}
-
 .slider {
-  width: 1300px;
-  max-width: 100vw;
-  height: 700px;
+  width: 85vw;
+  border-radius: 15px;
+  height: 80vh;
   margin: auto;
   position: relative;
   overflow: hidden;
@@ -22,14 +17,14 @@ body {
   transition: 1s;
 }
 
-.list img {
+.list-item {
   width: 1300px;
   max-width: 100vw;
   height: 100%;
   object-fit: cover;
 }
 
-.buttons {
+.buttons-container {
   position: absolute;
   top: 45%;
   left: 5%;
@@ -38,7 +33,7 @@ body {
   justify-content: space-between;
 }
 
-.buttons button {
+.button-style {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -49,31 +44,25 @@ body {
   font-weight: bold;
 }
 
-.dots {
-  position: absolute;
-  bottom: 10px;
-  color: #fff;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+.dots-container {
   display: flex;
   justify-content: center;
-  transition: 1s;
+  align-items: center;
+  margin-top: 20px; /* Adjust the spacing from the bottom of the slider */
 }
 
-.dots li {
-  list-style: none;
-  width: 10px;
-  height: 10px;
-  background-color: #fff;
-  margin: 20px;
-  border-radius: 20px;
+.dot-item {
+  height: 12px;
+  width: 12px;
+  background-color: #bbb; /* Light gray background */
+  border-radius: 50%; /* Makes the dots circular */
+  margin: 0 5px; /* Adds space between the dots */
   cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition when dot is active */
 }
 
-.dots li.active {
-  width: 30px;
+.dot-active {
+  background-color: #717171; /* Darker color for the active dot */
 }
 
 @media screen and (max-width: 768px) {

@@ -18,7 +18,6 @@ const Sponsors = lazy(() => import('./pages/Sponsors/Sponsors.jsx'));
 const EventsDay1 = lazy(() => import('./pages/Events/Day 1/EventsDay1.jsx'));
 const EventsDay2 = lazy(() => import('./pages/Events/Day 2/EventsDay2.jsx'));
 const Gallery = lazy(() => import('./pages/PastEvents/gallery.jsx'));
-const Gallery_mobile = lazy(() => import('./pages/PastEvents/gallery_mobile.jsx'));
 
 // Define the router with Suspense and Loader
 const router = createBrowserRouter([
@@ -87,14 +86,6 @@ const router = createBrowserRouter([
     element: (
       <Suspense fallback={<Loader />}>
         <Gallery />
-      </Suspense>
-    ),
-  },
-  {
-    path: '/gallery_mobile',
-    element: (
-      <Suspense fallback={<Loader />}>
-        <Gallery_mobile />
       </Suspense>
     ),
   },

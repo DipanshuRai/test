@@ -1,4 +1,4 @@
-import './gallery.css';
+import './gallery_laptop.css';
 import ScrambleText from '../../components/Scramble';
 import Navbar from '../Navbar/Navbar';
 
@@ -50,7 +50,7 @@ const Carousel = ({ items }) => {
   );
 };
 
-const Gallery = () => {
+const GalleryI = () => {
   const carouselItems1 = [
     {
       index: 1,
@@ -381,4 +381,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default GalleryI;
