@@ -359,7 +359,7 @@ const Gallery = () => {
       <div className="gli-container">
         <section className="gli-slide">
           <div className="gli-heading">Malkauns | DJ Raven</div>
-          {/* <Carousel items={carouselItems3} /> */}
+          <Carousel items={carouselItems3} />
         </section>
         <section className="gli-slide">
           <div className="gli-heading">D-Dazzlers x Tarang</div>
