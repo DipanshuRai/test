@@ -356,7 +356,7 @@ const Gallery = () => {
           <div className="gli-h1">PastEvents</div>
         </div>
       </div>
-      <div className="gli-container">
+      {/* <div className="gli-container">
         <section className="gli-slide">
           <div className="gli-heading">Malkauns | DJ Raven</div>
           <Carousel items={carouselItems3} />
@@ -377,7 +377,7 @@ const Gallery = () => {
           <div className="gli-heading">IPL Auction | Tech Quiz</div>
           <Carousel items={carouselItems4} />
         </section>
-      </div>
+      </div> */}
     </div>
   );
 };
