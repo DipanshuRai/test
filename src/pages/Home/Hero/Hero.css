@@ -1,0 +1,31 @@
+.hr-container {
+    padding-top: 200px;
+    background-color: rgb(13, 13, 13);
+    height: 120vh;
+}
+
+@media(max-width: 1024px) {
+    .hr-container {
+        height: 90vh;
+    }
+}
+
+@media(max-width: 770px) {
+    .hr-container {
+        height: 110vh;
+    }
+}
+
+@media(max-width: 450px) {
+    .hr-container {
+        padding-top: 140px;
+        height: 120vh;
+    }
+}
+
+@media(max-width: 380px) {
+    .hr-container {
+        padding-top: 130px;
+        height: 140vh;
+    }
+}

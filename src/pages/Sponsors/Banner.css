@@ -1,0 +1,44 @@
+
+  .ban-image img {
+    max-width: 150px;
+    max-height: 150px;
+    /* height: 5rem; */
+    padding:  15px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .ban-image img:last-of-type {
+    padding-left: 0;
+  }
+  
+  .ban-inner {
+    background-color: black;
+    position: relative;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    height: 8rem;
+  }
+  
+  .ban-wrapper {
+    position: absolute;
+    display: flex;
+  }
+  
+  .ban-section {
+    display: flex;
+    animation: swipe var(--speed) linear infinite backwards;
+    
+  }
+  
+  @keyframes swipe {
+    0% {
+      transform: translate(0%);
+    }
+  
+    100% {
+      transform: translate(-50%);
+    }
+  }
+  

@@ -1,0 +1,366 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
+
+:root {
+    --primary-color: #ff4757;
+    --secodary-color: #0e2334;
+    --white-color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    vertical-align: middle;
+    color: inherit;
+}
+
+body {
+    font-family: "Montserrat";
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+    color: var(--primary-color);
+    /* background-color: var(--secodary-color); */
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 480px;
+    width: 100%;
+    height: 500px;
+    /* -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, -1); */
+}
+
+nav .link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20%;
+    margin-top: -20px;
+    right: -1%;
+    cursor: pointer;
+    z-index: 99;
+}
+
+nav>input:checked~ul {
+    visibility: inherit;
+}
+
+nav>input:checked~ul li {
+    transform: rotate(calc((-180deg / 8) * var(--item))) translateX(0);
+    opacity: 1;
+}
+
+nav .link .close,
+nav input :checked~label .menu {
+    display: none;
+}
+
+nav input :checked~label .close {
+    display: block;
+}
+
+/*7 items +1*/
+nav ul.submenu li {
+    --item: 1;
+    position: absolute;
+    width: 175px;
+    height: 60px;
+    transform-origin: right center;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: transform 0.7s, opacity 0.2s;
+}
+
+nav ul li:nth-child(2) {--item: 2;}
+nav ul li:nth-child(3) {--item: 3;}
+nav ul li:nth-child(4) {--item: 4;}
+nav ul li:nth-child(5) {--item: 5;}
+nav ul li:nth-child(6) {--item: 6;}
+nav ul li:nth-child(7) {--item: 7;}
+
+nav ul li:nth-child {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a i {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    border: 2px solid transparent;
+    transition: border 0.3s, background-color 0.3s;
+}
+
+nav ul li a :hover {
+    background-color: transparent;
+    border-color: var(--primary-color);
+}
+
+nav ul li a span {
+    position: absolute;
+    right: calc(100% + 1em);
+    text-align: right;
+    font-size: 13px;
+    padding: 0 10px;
+    border-radius: 25px;
+    background-image: linear-gradient(to right,
+            transparent 25%,
+            var(--primary-color));
+    z-index: -1;
+    transition: color 0.3s;
+    color: black;
+}
+
+nav ul li a span ::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transform: rotate(180deg);
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 25px;
+    z-index: -1;
+    transition: baground-color 0.3s;
+}
+
+nav ul a span {
+    transform: translate(50px);
+    opacity: 0;
+
+    transition: color 0.3s transform 0.3s 0.4s opacity 0.2s 0.4s;
+}
+
+nav>input:checked~ul li a span {
+    transform: translate(0);
+    transform: rotate(180deg);
+
+    opacity: 1;
+}
+
+nav input[type="checkbox"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.nigg {
+    transform: rotate(180deg) scale(2);
+}
+
+nav {
+    .link {
+        &::before {
+            content: "";
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background-image: linear-gradient(to left,transparent 25%,var(--primary-color));
+            border-radius: 50% 0 0 50%;
+            transform: scale(2);
+            z-index: -2;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            background-color: var(--secodary-color);
+            border-radius: 50% 0 0 50%;
+            transform: scale(2);
+            z-index: -1;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        &.hover::after {
+            opacity: 0.9;
+        }
+
+        .close {
+            display: none;
+        }
+    }
+
+    input:checked~ul {
+        visibility: inherit;
+    }
+
+    input:checked~label .menu {
+        display: none;
+    }
+
+    input:checked~label .close {
+        display: block;
+    }
+
+    ul.submenu {
+        position: absolute;
+        /* position: relative; */
+        margin-top: -150px;
+        margin-right: -40px;
+        padding-left: 90px;
+        right: 0;
+        height: 700px;
+        width: 400px;
+        transform: rotate(90deg);
+        visibility: hidden;
+        max-width: 400px;
+        transition: visibility 0.1s;
+
+        li {
+            --item: 1;
+            position: absolute;
+            width: 175px;
+            height: 60px;
+            transform: rotate(calc((-180deg / 8) * var(--item))) translateX(157px);
+            transform-origin: right center;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transition: transform 0.7s, opacity 0.2s;
+
+            a {
+                i {
+                    font-size: 20px;
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: var(--primary-color);
+                    color: var(--white-color);
+                    border: 2px solid transparent;
+                    transition: border 0.3s, background-color 0.3s;
+                }
+
+                &:hover {
+                    i {
+                        background-color: transparent;
+                        border-color: var(--primary-color);
+                    }
+
+                    span {
+                        transition: -1s;
+                        color: var(--white-color);
+                        &::before {
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+
+            span {
+                position: absolute;
+                right: calc(100% + 1em);
+                text-align: right;
+                font-size: 13px;
+                padding: 10px;
+                border-radius: 25px;
+                background-image: linear-gradient(to right,transparent 25%,brown, red, orange);
+                color: white;
+
+                z-index: -1;
+                transition: color 0.3s;
+                /* background-image: url("https://img1.picmix.com/output/stamp/normal/7/8/1/9/19187_38489.gif"); */
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 2px;
+                    left: 2px;
+                    width: calc(100% - 4px);
+                    height: calc(100% - 4px);
+                    border-radius: 25px;
+                    background-color: blue;
+                    opacity: 30%;
+                    z-index: -1;
+                    color: white;
+                    transition: background-color 0.3s;
+                }
+            }
+
+            &:nth-child(2) {--item: 2;}
+            &:nth-child(3) {--item: 3;}
+            &:nth-child(4) {--item: 4;}
+            &:nth-child(5) {--item: 5;}
+
+            a i {
+                &:nth-child(1) {transform: rotate(292deg);}
+                &:nth-child(2) {transform: rotate(315deg);}
+                &:nth-child(3) {transform: rotate(337deg);}
+                &:nth-child(5) {transform: rotate(22deg);}
+            }
+
+            span {
+                transform: translate(50px);
+                opacity: 0;
+                transition: color 0.3s, transform 0.3s 0.4s, opacity 0.2s 0.4s;
+            }
+        }
+    }
+}
+
+nav ul.submenu {
+    position: absolute;
+    transform: rotate(90deg);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.1s, opacity 0.3s;
+    background-image: url('./blue-light-spiral-illusion-vayjyl3o5vg8tulh.webp');
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+    border-bottom-left-radius: 10000px;
+    border-bottom-right-radius: 10000px;
+    transition: 1s;
+    position: relative;
+}
+
+nav input[type="checkbox"]:checked~ul.submenu {
+    visibility: visible;
+    opacity: 1;
+    /* Show the menu when checkbox is checked */
+    transform: rotate(90deg);
+    /* Rotate back to normal position */
+}
+
+.toppp {
+    display: flex;
+    align-content: space-around;
+    position: absolute;
+    margin-top: -250px;
+    z-index: 1000;
+    transform: scale(0.9);
+}
+
+.img11,.img12,.img13,.img14,.img15 {
+    transform: rotate(245deg);
+    border-radius: 190px;
+}

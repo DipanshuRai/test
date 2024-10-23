@@ -1,0 +1,390 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+.gli-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  /* background-image: url(.gli-/img1.gli-jpg); */
+  background:
+    radial-gradient(circle, rgba(115, 12, 50, 1) 5%, rgba(13, 12, 12, 1) 60%);
+  background-size: cover;
+  background-position: center;
+}
+
+.gli-main-heading {
+  display: flex;
+  min-height: 18vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7vw;
+  font-weight: 600;
+}
+
+.gli-content .gli-h1 {
+  color: #fff;
+  font-size: 8em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.gli-content .gli-h1:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px #8338ec;
+}
+
+.gli-content .gli-h1:nth-child(2) {
+  color: #c19bf5;
+  animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0%, 100% {
+    clip-path: polygon(0% 45%, 16% 44%, 33% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+  }
+}
+
+.gli-container {
+  flex: 1;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 0;
+}
+
+.gli-container::-webkit-scrollbar {
+  display: none;
+}
+
+.gli-slide {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: cover;
+  background-position: center;
+  width: 80vw;
+  height: 77vh;
+  margin: 15vh 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  align-items: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(102, 80, 80, 0.653);  
+}
+
+.gli-slide:before{
+  content: '';
+  position: absolute;
+  filter: blur(60px);
+  background: inherit;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.379), rgba(0, 0, 0, 0.29)),
+    url('./img5_static.png');
+  background-size: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: -20px;
+  box-shadow: inset 0 0 500px rgba(0, 0, 0, 0.464);  
+  z-index: -1;
+}
+
+.gli-heading {
+  text-align: center;
+  font-size: 3vw;
+  font-weight: 500;
+  margin-top: 2vh;
+  padding-left: 10px;
+  padding-right: 10px;
+  letter-spacing: 3px;
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    /* 0 0 10px #fff, */
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    /* 0 0 80px #0ff, */
+    /* 0 0 90px #0ff, */
+    /* 0 0 100px #0ff, */
+    0 0 150px rgb(0, 253, 253);
+}
+
+:root {
+  --carousel-transition-duration: 250ms;
+  --carousel-transition-ease: ease-out;
+  --carousel-shadow-color-rgb: 128, 128, 128;
+  --carousel-item-width: 17rem;
+  --carousel-item-height: 19rem;
+  --carousel-item-hover-effect: 1.075;
+  --carousel-item-glow-color-rgb: 255, 255, 255;
+  --carousel-item-glow-size: 5rem;
+  --carousel-diameter: 65rem;
+  --carousel-3d-perspective: 1700px;
+  --carousel-3d-perspective-origin: 50% 20%;
+  --carousel-control-button-width: 1.25rem;
+  --carousel-control-button-height: 4rem;
+  --carousel-control-color-rgb: 255, 255, 255;
+  --carousel-animation-duration: 25s;
+  --carousel-animation-play-state: running;
+  --carousel-direction-animation-play-state: paused;
+}
+
+.gli-carousel {
+  --_diameter: var(--carousel-diameter);
+  --_radius: calc(var(--_diameter) / 2);
+  --_item-width: var(--carousel-item-width);
+  --_item-height: var(--carousel-item-height);
+  perspective: var(--carousel-3d-perspective);
+  perspective-origin: var(--carousel-3d-perspective-origin);
+  width: var(--_diameter);
+  height: var(--_diameter);
+  margin-top: -15rem;
+}
+
+.gli-carousel-control-button {
+  --_width: var(--carousel-control-button-width);
+  --_height: var(--carousel-control-button-height);
+  width: var(--_width);
+  height: var(--_height);
+  background-color: rgb(var(--carousel-control-color-rgb));
+  opacity: 0.7;
+  transition: opacity var(--carousel-transition-duration) var(--carousel-transition-ease);
+  position: absolute;
+}
+
+.gli-carousel-control-button:hover {
+  opacity: 0.6;
+}
+
+.gli-carousel-control-button input {
+  -webkit-appearance: none;
+  appearance: none;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.gli-carousel-control-button.gli-left {
+  clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+  top: calc(var(--_radius) - var(--_height) / 0.65);
+  left: 0;
+}
+
+.gli-carousel:has(.gli-carousel-control-button.gli-left input:checked) {
+  --carousel-direction-animation-play-state: running;
+}
+
+.gli-carousel-control-button.gli-right {
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  top: calc(var(--_radius) - var(--_height)/0.65);
+  right: 0;
+}
+
+.gli-carousel:has(.gli-carousel-control-button.gli-right input:checked) {
+  --carousel-direction-animation-play-state: paused;
+}
+
+.gli-carousel-rotation-direction {
+  --_direction-animation-play-state: var(--carousel-direction-animation-play-state);
+  --_z: calc(var(--_radius) * -1);
+  transform: translateZ(var(--_z));
+  transform-style: preserve-3d;
+  animation: carousel-rotation-reverse calc(var(--carousel-animation-duration) / 2) reverse linear infinite var(--_direction-animation-play-state);
+  transition: all var(--carousel-transition-duration) var(--carousel-transition-ease);
+}
+
+.gli-carousel-item-wrapper {
+  transform-style: inherit;
+  width: inherit;
+  height: inherit;
+  list-style-type: none;
+  position: relative;
+  animation: carousel-rotation-normal var(--carousel-animation-duration) normal linear infinite var(--carousel-animation-play-state);
+  transition: all var(--carousel-transition-duration) var(--carousel-transition-ease);
+}
+
+.gli-carousel .gli-carousel-rotation-direction:has(.gli-carousel-item:hover) {
+  --carousel-animation-play-state: paused;
+  --_direction-animation-play-state: paused;
+}
+
+.gli-carousel-item {
+  --_width: var(--_item-width);
+  --_height: var(--_item-height);
+  --_rotation: calc(360 / var(--_num-elements) * var(--_index) * 1deg);
+  left: calc(var(--_radius) - var(--_item-width) / 2);
+  top: calc(var(--_radius) - var(--_item-height) / 2);
+  transform: rotateY(var(--_rotation)) translateZ(var(--_radius));
+  transform-style: inherit;
+  width: var(--_width);
+  height: var(--_height);
+  transition: all var(--carousel-transition-duration) var(--carousel-transition-ease);
+  box-shadow: 0 0 var(--carousel-item-glow-size) transparent;
+  position: absolute;
+}
+
+.gli-carousel-item:hover {
+  box-shadow: 0 0 var(--carousel-item-glow-size) rgb(var(--carousel-item-glow-color-rgb));
+  transform: rotateY(var(--_rotation)) translateZ(calc(var(--_radius) * var(--carousel-item-hover-effect)));
+}
+
+.gli-carousel-item a {
+  display: block;
+  width: inherit;
+  height: inherit;
+  border-radius: 15px;
+  text-indent: -9999px;
+  background-color: rgba(var(--carousel-item-empty-color-rgb), 0.gli-5);
+  background-image: var(--_image-url);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: filter var(--carousel-transition-duration) var(--carousel-transition-ease);
+}
+
+@keyframes carousel-rotation-reverse {
+  from {
+    transform: translateZ(var(--_z)) rotateY(0deg);
+  }
+
+  to {
+    transform: translateZ(var(--_z)) rotateY(360deg);
+  }
+}
+
+@keyframes carousel-rotation-normal {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@media (max-width:1300px) {
+  :root {
+    --carousel-item-width: 13rem;
+    --carousel-item-height: 17rem;
+    --carousel-item-glow-size: 4rem;
+    --carousel-diameter: 50rem;
+    --carousel-3d-perspective: 1700px;
+    --carousel-3d-perspective-origin: 50% 10%;
+    --carousel-control-button-width: 1.15rem;
+    --carousel-control-button-height: 3.5rem;
+  }
+
+  .gli-main-heading {
+    font-size: 0.7vw;
+  }
+
+  .gli-heading {
+    font-size: 3vw;
+  }
+
+  .gli-slide{
+    border-radius: 25px;
+  }
+
+  .gli-carousel{
+    margin-top: -10rem;
+  }
+
+  .gli-carousel-control-button.gli-left {
+    top: calc(var(--_radius) - var(--_height) / 0.75);
+  }
+  
+  .gli-carousel-control-button.gli-right {
+    top: calc(var(--_radius) - var(--_height)/0.75);
+  }
+}
+
+@media screen and (min-height: 1200px) and (max-height: 1400px) {
+  :root {
+    --carousel-item-width: 16rem;
+    --carousel-item-height: 21rem;
+    --carousel-diameter: 60rem;
+    --carousel-3d-perspective: 2200px;
+  }
+  
+  .gli-main-heading {
+    font-size: 1.2vw;
+  }
+
+  .gli-heading {
+    font-size: 6vw;
+  }
+
+  .gli-slide{
+    height: 73vh;
+    width: 90vw;
+  }
+
+  .gli-carousel{
+    margin-top: -3vh;
+  }
+}
+
+@media (max-width:850px) {
+  .gli-main-heading {
+    min-height: 16vh;
+    font-size: 1.1vw;
+  }
+
+  .gli-heading {
+    font-size: 5vw;
+    margin-top: 4vh;
+  }
+
+  .gli-slide{
+    border-radius: 20px;
+    width: 90vw;
+    height: 74vh;
+  }
+
+  .gli-carousel{
+    margin-top: -5rem;
+  }
+
+  .gli-carousel-item a {
+    border-radius: 10px;
+  }
+}
+
+@media (max-width:500px) {
+  :root{
+    --carousel-3d-perspective-origin: 50% 20%;
+  }
+
+  .gli-main-heading {
+    font-size: 1.5vw;
+  }
+
+  .gli-heading {
+    font-weight: 600;
+  }
+
+  .gli-carousel{
+    margin-top: -8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gli-lappy {
+      display: none;
+  }
+  .gli-mobby {
+      display: block;
+  }
+}

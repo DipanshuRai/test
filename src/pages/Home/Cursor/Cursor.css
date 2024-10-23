@@ -1,0 +1,36 @@
+/* styles.css */
+/* html *,
+body * {
+  /* cursor: none; 
+} */
+.cursor,
+.cursor-outline {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 10000000;
+}
+
+.cursor {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.767);
+  /* filter: invert(100%); */
+}
+
+.cursor-outline {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgb(153, 117, 25);
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 780px) {
+  .cursor{
+    background-color: none;
+  }
+  .cursor-outline{
+    color: none;
+  }
+}
