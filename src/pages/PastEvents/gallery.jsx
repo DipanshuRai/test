@@ -356,28 +356,28 @@ const Gallery = () => {
           <div className="gli-h1">PastEvents</div>
         </div>
       </div>
-      {/* <div className="gli-container">
+      <div className="gli-container">
         <section className="gli-slide">
           <div className="gli-heading">Malkauns | DJ Raven</div>
-          <Carousel items={carouselItems3} />
+          {/* <Carousel items={carouselItems3} /> */}
         </section>
         <section className="gli-slide">
           <div className="gli-heading">D-Dazzlers x Tarang</div>
-          <Carousel items={carouselItems5} />
+          {/* <Carousel items={carouselItems5} /> */}
         </section>
         <section className="gli-slide">
           <div className="gli-heading">Speaker Session</div>
-          <Carousel items={carouselItems1} />
+          {/* <Carousel items={carouselItems1} /> */}
         </section>
         <section className="gli-slide">
           <div className="gli-heading">Tech Tonic Tussle | Millet Mela</div>
-          <Carousel items={carouselItems2} />
+          {/* <Carousel items={carouselItems2} /> */}
         </section>
         <section className="gli-slide">
           <div className="gli-heading">IPL Auction | Tech Quiz</div>
-          <Carousel items={carouselItems4} />
+          {/* <Carousel items={carouselItems4} /> */}
         </section>
-      </div> */}
+      </div>
     </div>
   );
 };
